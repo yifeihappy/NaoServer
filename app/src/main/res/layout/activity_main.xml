@@ -15,8 +15,8 @@
         android:layout_weight="0"
         android:gravity="center_horizontal"
         android:text="哭闹提醒"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="24sp"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -37,7 +37,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
-                android:text="取消警报" />
+                android:text="取消警报"
+                android:textSize="30dp" />
 
             <Button
                 android:id="@+id/continueBtn"
@@ -45,7 +46,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
-                android:text="           继续监听" />
+                android:text="     继续监听"
+                android:textSize="30dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,7 +59,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:singleLine="false"
                 android:text="本机IP" />
@@ -66,7 +68,7 @@
                 android:id="@+id/localIPTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 android:gravity="center_horizontal" />
 
         </LinearLayout>
@@ -80,7 +82,7 @@
                 android:id="@+id/myIPTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="PORT" />
 
@@ -88,7 +90,7 @@
                 android:id="@+id/myPORTTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="3000" />
         </LinearLayout>

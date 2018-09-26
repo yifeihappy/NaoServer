@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cryPlayer = MediaPlayer.create(this, R.raw.sky);
-        openPlayer = MediaPlayer.create(this, R.raw.open);
-        closePlayer = MediaPlayer.create(this, R.raw.close);
+        openPlayer = MediaPlayer.create(this, R.raw.qopen);
+        closePlayer = MediaPlayer.create(this, R.raw.qclose);
 
         cancleBtn = (Button)findViewById(R.id.cancleBtn);
         continueBtn = (Button)findViewById(R.id.continueBtn);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(cryPlayer.isPlaying()){
-                    cryPlayer.stop();
+                    cryPlayer.pause();
                     try {
                         cryPlayer.prepare();
                     } catch (IOException e) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if(closePlayer.isPlaying()){
-                    closePlayer.stop();
+                    closePlayer.pause();
                     try {
                         closePlayer.prepare();
                     } catch (IOException e) {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if(openPlayer.isPlaying()){
-                    openPlayer.stop();
+                    openPlayer.pause();
                     try {
                         openPlayer.prepare();
                     } catch (IOException e) {
@@ -183,10 +183,13 @@ public class MainActivity extends AppCompatActivity {
             if((content=readFromClient()) != null) {
                 Log.d("", content);
                 if(content.equals("open")){
+                    openPlayer.seekTo(0);
                     openPlayer.start();
                 } else if(content.equals("close")){
+                    closePlayer.seekTo(0);
                     closePlayer.start();
                 } else if(content.equals("cry")){
+                    cryPlayer.seekTo(0);
                     cryPlayer.start();
                 } else {
                     Log.d("dd","收到无效指令："+content);
